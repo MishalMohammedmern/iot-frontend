@@ -106,7 +106,6 @@ const HeroComponent = () => {
                                             className="w-full h-full object-fit"
                                         />
                                     </div>
-
                                 </div>
                             </div>
                         </div>
