@@ -27,8 +27,8 @@ const Footer = () => {
             // Validation and status messages
             emailRequired: "Email is required",
             emailInvalid: "Please enter a valid email address",
-            subscribeSuccess: "Successfully subscribed to our newsletter!",
-            subscribeError: "Something went wrong. Please try again.",
+            subscribeSuccess: "Successfully subscribed ",
+            subscribeError: "This email is already subscribed!",
             subscribeDuplicate: "This email is already subscribed!",
             networkError: "Network error. Please check your connection."
         },
