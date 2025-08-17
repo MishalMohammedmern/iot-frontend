@@ -19,3 +19,41 @@ export const services = [
   "Estates",
   "Team Service",
 ];
+export const translations = {
+  en: {
+    emailPlaceholder: "Email",
+    subscribe: "Subscribe",
+    subscribing: "Subscribing...",
+    contacts: "Contacts",
+    about: "About",
+    ourStrategy: "Our Strategy",
+    ourAdvantages: "Our Advantages",
+    socialResponsibility: "Social Responsibility",
+    ourServices: "Our Services",
+    copyright: "© 2024 . All rights reserved.",
+    emailRequired: "Email is required",
+    emailInvalid: "Please enter a valid email address",
+    subscribeSuccess: "Successfully subscribed",
+    subscribeError: "This email is already subscribed!",
+    subscribeDuplicate: "This email is already subscribed!",
+    networkError: "Network error. Please check your connection."
+  },
+  ar: {
+    emailPlaceholder: "البريد الإلكتروني",
+    subscribe: "اشتراك",
+    subscribing: "جاري الاشتراك...",
+    contacts: "جهات الاتصال",
+    about: "حول",
+    ourStrategy: "استراتيجيتنا",
+    ourAdvantages: "مزايانا",
+    socialResponsibility: "المسؤولية الاجتماعية",
+    ourServices: "خدماتنا",
+    copyright: "© 2024 . جميع الحقوق محفوظة.",
+    emailRequired: "البريد الإلكتروني مطلوب",
+    emailInvalid: "يرجى إدخال بريد إلكتروني صالح",
+    subscribeSuccess: "تم الاشتراك بنجاح في نشرتنا الإخبارية!",
+    subscribeError: "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    subscribeDuplicate: "هذا البريد الإلكتروني مشترك بالفعل!",
+    networkError: "خطأ في الشبكة. يرجى التحقق من اتصالك."
+  }
+};

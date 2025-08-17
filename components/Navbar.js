@@ -38,7 +38,7 @@ export default function Navbar() {
         }`}
     >
       <div className="flex items-center justify-between lg:px-2 relative container mx-auto">
-        {/* Logo */}
+
         <Link href="/" className="font-bold text-lg z-50">
           <Image
             src="/logo.png"
@@ -49,7 +49,6 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-6 xl:text-lg relative">
           <Link href="/" className="hover:text-yellow-300 transition">
             {language === "ar" ? "الرئيسية" : "Home"}
@@ -58,7 +57,6 @@ export default function Navbar() {
             {language === "ar" ? "من نحن" : "About Us"}
           </Link>
 
-          {/* Services Dropdown */}
           <div className="relative">
             <button
               onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -86,7 +84,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Actions */}
+
         <div className="hidden lg:flex items-center gap-4 relative">
           {showSearch ? (
             <SearchBar setShowSearch={setShowSearch} />
@@ -107,12 +105,9 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
+
         <div className="flex lg:hidden items-center gap-4">
-          <Search
-            className="cursor-pointer hover:text-yellow-300 transition"
-            size={20}
-          />
+
           <LanguageSelector
             language={language}
             onChange={(lang) => dispatch(setLanguage(lang))}
@@ -126,7 +121,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <MobileMenu
             language={language}
