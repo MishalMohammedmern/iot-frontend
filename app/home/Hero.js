@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Search, Calendar } from 'lucide-react';
+import Image from 'next/image';
 
 const HeroComponent = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -100,10 +101,12 @@ const HeroComponent = () => {
                                 <div className="flex justify-center lg:justify-end">
 
                                     <div className="md:w-88 md:h-96 2xl:w-[400px] w-[220px] h-[250px] overflow-hidden shadow-2xl transition-transform duration-500">
-                                        <img
+                                        <Image
                                             src={slide.image}
                                             alt="Professional"
                                             className="w-full h-full object-fit"
+                                            width={500}
+                                            height={500}
                                         />
                                     </div>
                                 </div>

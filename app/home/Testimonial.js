@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 const TestimonialComponent = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,17 +46,19 @@ const TestimonialComponent = () => {
                     <div className="flex md:flex-row flex-col gap-8 md:items-start items-center lg:h-[500px]">
                         <div className="flex-shrink-0 ">
                             <div className="w-full  ">
-                                <img
+                                <Image
                                     src={currentTestimonial.image}
                                     alt={currentTestimonial.name}
                                     className="w-full lg:h-full object-cover h-[300px]"
+                                    width={500}
+                                    height={500}
                                 />
                             </div>
                         </div>
                         <div className="flex-1 flex flex-col justify-between h-full">
                             <div>
                                 <blockquote className="lg:text-[24px] md:text-[20px] text-[18px] leading-relaxed mb-8 text-amber-50  md:w-[80%] opacity-[60%]">
-                                    "{currentTestimonial.quote}"
+                                    {currentTestimonial.quote}
                                 </blockquote>
                             </div>
 
