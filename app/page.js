@@ -13,8 +13,12 @@ export default async function Home() {
   return (
     <div>
       <HeroComponent heroData={heroData?.data} />
+      <div id="our-team">
       <OurTeamComponent teamData={teamData?.data} />
+      </div>
+      <div id="blogs">
       <TestimonialComponent testimonialData={testimonialData?.data}/>
+      </div>
     </div>
   );
 }

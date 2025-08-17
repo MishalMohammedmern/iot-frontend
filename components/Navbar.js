@@ -141,7 +141,7 @@ export default function Navbar() {
             <Link href="/" className="hover:text-yellow-300 transition">
               {language === "ar" ? "الرئيسية" : "Home"}
             </Link>
-            <Link href="/about" className="hover:text-yellow-300 transition">
+            <Link href="/#about" className="hover:text-yellow-300 transition">
               {language === "ar" ? "من نحن" : "About Us"}
             </Link>
             <div className="relative">
@@ -157,13 +157,13 @@ export default function Navbar() {
                 />
               </button>
             </div>
-            <Link href="/team" className="hover:text-yellow-300 transition">
+            <Link href="/#our-team"className="hover:text-yellow-300 transition">
               {language === "ar" ? "فريقنا" : "Our Team"}
             </Link>
-            <Link href="/blogs" className="hover:text-yellow-300 transition">
+            <Link href="/#blogs" className="hover:text-yellow-300 transition">
               {language === "ar" ? "المدونات" : "Blogs"}
             </Link>
-            <Link href="/contact" className="hover:text-yellow-300 transition">
+            <Link href="/#contact" className="hover:text-yellow-300 transition">
               {language === "ar" ? "تواصل معنا" : "Contact Us"}
             </Link>
           </div>
@@ -272,17 +272,12 @@ export default function Navbar() {
           )}
           {isMobileMenuOpen && (
             <div className="absolute top-0 left-0 w-full h-screen bg-[#4B2615] text-white flex flex-col p-6 gap-6 z-40">
-              {/* <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="self-end mb-4"
-              >
-                <X size={28} />
-              </button> */}
+        
 
               <Link href="/" onClick={closeMobileMenu} className="hover:text-yellow-300 transition">
                 {language === "ar" ? "الرئيسية" : "Home"}
               </Link>
-              <Link href="/about" onClick={closeMobileMenu} className="hover:text-yellow-300 transition">
+              <Link href="/#about" onClick={closeMobileMenu} className="hover:text-yellow-300 transition">
                 {language === "ar" ? "من نحن" : "About Us"}
               </Link>
 
@@ -320,13 +315,13 @@ export default function Navbar() {
                 )}
               </div>
 
-              <Link href="/team" onClick={closeMobileMenu} className="hover:text-yellow-300 transition">
+              <Link href="/#our-team" onClick={closeMobileMenu} className="hover:text-yellow-300 transition">
                 {language === "ar" ? "فريقنا" : "Our Team"}
               </Link>
-              <Link href="/blogs" onClick={closeMobileMenu} className="hover:text-yellow-300 transition">
+              <Link href="/#blogs" onClick={closeMobileMenu} className="hover:text-yellow-300 transition">
                 {language === "ar" ? "المدونات" : "Blogs"}
               </Link>
-              <Link href="/contact" onClick={closeMobileMenu} className="hover:text-yellow-300 transition">
+              <Link href="/#contact" onClick={closeMobileMenu} className="hover:text-yellow-300 transition">
                 {language === "ar" ? "تواصل معنا" : "Contact Us"}
               </Link>
 
