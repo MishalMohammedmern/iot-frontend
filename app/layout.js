@@ -2,6 +2,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ReduxProvider from "@/redux/storeProvider";
 
 
 const dmSans = DM_Sans({
@@ -20,9 +21,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={dmSans.variable}>
       <body className={`${dmSans.className} antialiased bg-white`}>
-        <Navbar />
-        {children}
-        <Footer/>
+        <ReduxProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

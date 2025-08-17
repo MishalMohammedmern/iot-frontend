@@ -2,45 +2,26 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Search, Calendar } from 'lucide-react';
 import Image from 'next/image';
+import { useSelector } from 'react-redux';
 
-const HeroComponent = () => {
+const HeroComponent = ({ heroData }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const { language} = useSelector((state) => state.language);
 
-    const slides = [
-        {
-            id: 1,
-            title: "Transform Your Vision",
-            subtitle: "Professional solutions that drive results and exceed expectations. We bring innovation to every project we undertake.",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face",
-            bgImage: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop"
-        },
-        {
-            id: 2,
-            title: "Innovation at Scale",
-            subtitle: "Cutting-edge technology meets creative excellence. Experience the future of digital transformation today.",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop&crop=face",
-            bgImage: "/slide1.jpg"
-        },
-        {
-            id: 3,
-            title: "Excellence Delivered",
-            subtitle: "Where quality meets innovation. Our expert team delivers solutions that transform businesses worldwide.",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=600&fit=crop&crop=face",
-            bgImage: "/slide1.jpg"
-        }
-    ];
+
 
 
     useEffect(() => {
+
         if (!isAutoPlaying) return;
 
         const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
+            setCurrentSlide((prev) => (prev + 1) % heroData.length);
         }, 5000);
 
         return () => clearInterval(interval);
-    }, [isAutoPlaying, slides.length]);
+    }, [isAutoPlaying, heroData.length]);
 
     const goToSlide = (index) => {
         setCurrentSlide(index);
@@ -49,13 +30,13 @@ const HeroComponent = () => {
     };
 
     const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setCurrentSlide((prev) => (prev + 1) % heroData.length);
         setIsAutoPlaying(false);
         setTimeout(() => setIsAutoPlaying(true), 10000);
     };
 
     const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+        setCurrentSlide((prev) => (prev - 1 + heroData.length) % heroData.length);
         setIsAutoPlaying(false);
         setTimeout(() => setIsAutoPlaying(true), 10000);
     };
@@ -64,7 +45,7 @@ const HeroComponent = () => {
         <div className="relative w-full h-screen overflow-hidden bg-gray-900">
 
             <div className="relative w-full h-full ">
-                {slides.map((slide, index) => (
+                {heroData.map((slide, index) => (
                     <div
                         key={slide.id}
                         className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide
@@ -75,7 +56,7 @@ const HeroComponent = () => {
 
                         <div
                             className="absolute inset-0 bg-cover bg-center"
-                            style={{ backgroundImage: `url(${slide.bgImage})` }}
+                            style={{ backgroundImage: `url(${slide?.sliders?.url})` }}
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-[#4B2615]/68 via-[#4B2615]/28 to-transparent"></div>
                             <div className="absolute inset-0 bg-gradient-to-t from-[#4B2615]/60 via-transparent to-[#4B2615]/20"></div>
@@ -85,10 +66,10 @@ const HeroComponent = () => {
                                 <div className="space-y-8">
                                     <div className="space-y-6 mt-5 lg:mt-0">
                                         <h1 className="text-[30px]  md:text-[44px] 2xl:text-[54px] font-bold text-white leading-tight">
-                                            {slide.title}
+                                           {language === "ar" ? slide.ar_title : slide.title} 
                                         </h1>
                                         <p className="md:text-[20px] text-[16px] 2xl:text-[26px] text-white/80 leading-relaxed">
-                                            {slide.subtitle}
+                                            {language === "ar" ? slide.ar_description : slide.description}
                                         </p>
                                     </div>
 
@@ -102,7 +83,7 @@ const HeroComponent = () => {
 
                                     <div className="md:w-88 md:h-96 2xl:w-[400px] w-[220px] h-[250px] overflow-hidden shadow-2xl transition-transform duration-500">
                                         <Image
-                                            src={slide.image}
+                                            src={slide?.person_img?.url}
                                             alt="Professional"
                                             className="w-full h-full object-fit"
                                             width={500}
@@ -132,7 +113,7 @@ const HeroComponent = () => {
             </button>
 
             <div className="absolute left-16 top-2/3 -translate-y-1/2 z-30 lg:flex flex-col space-y-4 hidden ">
-                {slides.map((_, index) => (
+                {heroData.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => goToSlide(index)}
@@ -144,13 +125,13 @@ const HeroComponent = () => {
                 ))}
             </div>
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex space-x-3 lg:hidden">
-                {slides.map((_, index) => (
+                {heroData.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => goToSlide(index)}
                         className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                                ? 'bg-white scale-125'
-                                : 'bg-white/40 hover:bg-white/60'
+                            ? 'bg-white scale-125'
+                            : 'bg-white/40 hover:bg-white/60'
                             }`}
                     />
                 ))}
