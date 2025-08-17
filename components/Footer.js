@@ -79,7 +79,7 @@ const Footer = () => {
         setSubscriptionStatus(null);
 
         try {
-            // Prepare subscription data in the required format
+        
             const subscriptionData = {
                 data: {
                     mail: email

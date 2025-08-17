@@ -87,7 +87,7 @@ export default function Navbar() {
   const handleSuggestionClick = (service) => {
     const slug = service.toLowerCase().replace(/ /g, "-").replace(/[&…]/g, "");
 
- 
+
     if (service.toLowerCase().includes("team")) {
       router.push("/team-services");
     } else {
@@ -123,9 +123,8 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-40 text-white transition-all duration-300 ${
-          isScrolled ? "bg-[#4B2615] shadow-lg" : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 text-white transition-all duration-300 ${isScrolled ? "bg-[#4B2615] shadow-lg" : "bg-transparent"
+          }`}
       >
         <div className="flex items-center justify-between lg:px-2 relative container mx-auto">
           <Link href="/" className="font-bold text-lg z-50">
@@ -153,9 +152,8 @@ export default function Navbar() {
                 {language === "ar" ? "الخدمات" : "Services"}
                 <ChevronDown
                   size={16}
-                  className={`transition-transform ${
-                    isServicesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${isServicesOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
             </div>
@@ -251,24 +249,30 @@ export default function Navbar() {
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
+          {isServicesOpen && (
+            <div className="hidden absolute left-0 top-[80%] w-full bg-[#4B2615] text-white rounded-lg shadow-lg lg:grid grid-cols-3 gap-6 p-6 z-40">
+              {services.map((service, idx) => {
+                const slug = service
+                  .toLowerCase()
+                  .replace(/ /g, "-")
+                  .replace(/[&…]/g, "");
+
+                return (
+                  <Link
+                    key={idx}
+                    href={`/services/${slug}`}
+                    onClick={() => setIsServicesOpen(false)} // ✅ Close dropdown
+                    className="hover:text-yellow-300 transition py-1 text-sm"
+                  >
+                    {service}
+                  </Link>
+                );
+              })}
+            </div>
+          )}
+
         </div>
 
-        {isServicesOpen && (
-          <div className="hidden absolute left-0 top-[80%] w-full bg-[#4B2615] text-white rounded-lg shadow-lg lg:grid grid-cols-3 gap-6 p-6 z-40">
-            {services.map((service, idx) => {
-              const slug = service.toLowerCase().replace(/ /g, "-").replace(/[&…]/g, "");
-              return (
-                <Link
-                  key={idx}
-                  href={`/services/${slug}`}
-                  className="hover:text-yellow-300 transition py-1 text-sm"
-                >
-                  {service}
-                </Link>
-              );
-            })}
-          </div>
-        )}
       </nav>
     </>
   );
