@@ -6,7 +6,7 @@ const Content = () => {
   const router = useRouter();
 
   return (
-    <div className="container mx-auto mt-6 mb-6">
+    <div className="container mx-auto mt-6 mb-6 px-4 md:px-0">
       <div
         className="flex items-center gap-3 cursor-pointer"
         onClick={() => router.push("/")}

@@ -9,51 +9,6 @@ const OurTeamComponent = ({ teamData }) => {
     const { language } = useSelector((state) => state.language);
 
 
-    const teamMembers = [
-        {
-            id: 1,
-            name: "John Anderson",
-            position: "CEO & FOUNDER",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
-            initial: "J"
-        },
-        {
-            id: 2,
-            name: "Michael Roberts",
-            position: "CREATIVE DIRECTOR",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face",
-            initial: "M"
-        },
-        {
-            id: 3,
-            name: "David Thompson",
-            position: "LEAD DEVELOPER",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=face",
-            initial: "D"
-        },
-        {
-            id: 4,
-            name: "Sarah Wilson",
-            position: "PROJECT MANAGER",
-            image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=500&fit=crop&crop=face",
-            initial: "S"
-        },
-        {
-            id: 5,
-            name: "James Miller",
-            position: "UX DESIGNER",
-            image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=500&fit=crop&crop=face",
-            initial: "J"
-        },
-        {
-            id: 6,
-            name: "Emma Davis",
-            position: "MARKETING LEAD",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face",
-            initial: "E"
-        }
-    ];
-
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 768) {

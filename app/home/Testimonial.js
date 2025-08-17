@@ -8,24 +8,6 @@ const TestimonialComponent = ({ testimonialData }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const { language } = useSelector((state) => state.language);
 
-
-    const testimonials = [
-        {
-            id: 1,
-            name: "Mohammed Saif",
-            title: "CEO/Company",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
-            quote: "With the help of the hospitable staff of Al Safar and Partners I was able to get my work done without any hassle. The help I received helped me a great deal to overcome the issues that I faced. I was always updated about my case and my queries never went unanswered."
-        },
-        {
-            id: 2,
-            name: "Sarah Johnson",
-            title: "CTO/TechCorp",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
-            quote: "The professional service and attention to detail exceeded our expectations. Every step of the process was handled with care and expertise."
-        }
-    ];
-
     const nextTestimonial = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonialData.length);
     };

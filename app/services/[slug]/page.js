@@ -18,7 +18,7 @@ const servicesData = {
 };
 
 export default async function ServiceDetail({ params }) {
-    const { slug } = params; // no change needed here
+    const { slug } = params; 
     const service = servicesData[slug];
 
     if (!service) {

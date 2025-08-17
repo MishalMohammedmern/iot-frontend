@@ -9,9 +9,6 @@ const HeroComponent = ({ heroData }) => {
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
     const { language} = useSelector((state) => state.language);
 
-
-
-
     useEffect(() => {
 
         if (!isAutoPlaying) return;
